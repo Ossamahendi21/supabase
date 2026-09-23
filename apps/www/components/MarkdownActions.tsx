@@ -27,7 +27,7 @@ export function MarkdownActions({
 }: Props) {
   const { copied, copyMarkdown } = useCopyMarkdownFromUrl()
   const sendTelemetryEvent = useSendTelemetryEvent()
-  const mdPath = pagePath === '/' ? '/homepage.md' : `${pagePath}.md`
+  const mdPath = pagePath === '/' ? '/index.md' : `${pagePath}.md`
   const urls = askAiUrls(`${SITE_ORIGIN}${pagePath === '/' ? '' : pagePath}`)
 
   async function handleCopy() {
@@ -52,7 +52,7 @@ export function MarkdownActions({
         className={cn(itemClass, 'cursor-pointer text-left')}
       >
         {copied ? (
-          <Check size={14} strokeWidth={1.5} className="text-brand" aria-hidden />
+          <Check size={14} strokeWidth={1.5} className="text-primary" aria-hidden />
         ) : (
           <Copy size={14} strokeWidth={1.5} aria-hidden />
         )}
